@@ -15,6 +15,9 @@ Eastern Cascades Forest-Snow Observations 2022-2023
 **Cleaned Temprature Data** -  Time series of temprature data recorded by 10 HOBO sensors at each site (9 placed ground level and one in a tree measuring 
                         air temperature).
 
+**Software Used** - ImageJ with the Hemispherical 2.0 Plugin to threshold hemispherical images, and Gap Light Analyzer 2.0 to calculate site openness.
+
+
 &nbsp;
 &nbsp;
 
@@ -62,6 +65,10 @@ Eastern Cascades Forest-Snow Observations 2022-2023
 
 **max_gapf:**	The maximum gap fraction value taken from all the gap fractions calculated for each individual LocationID  
 
+**SiteOpenness:** Output from Gap Light Analyzer 2.0, giving the percent of a site that is canopy 
+
+**SiteOpennessAdjusted:** A value calculated by subracting the site openness from 100, to obtain the percent of a site that is open sky
+
 **SDD:**		Snow disapearance date
 
 **SDD1:**		First snow disappearance date (SDD2 is second, SDD3 is third, etc.)
@@ -69,5 +76,21 @@ Eastern Cascades Forest-Snow Observations 2022-2023
 **CN201_temp:**	This example would describe time series temperature data recorded by sensor at site CN, Plot 20, Position 1
 
 **CN20A_temp:**	This example would describe time series air temperature data recorded by sensor at site CN, Plot 20
+
+&nbsp;
+&nbsp;
+
+## **Methods**
+
+**Snow Depth:** Measured to the nearest 5cm tape mark, rounding up if exaclty between tape marks.
+
+**FSCA:** Estimated based on snow cover percentage of 10x10 plot, to the nearest 10%
+
+**Imagetime:** In general, the image closes to noon for each day was chosen. If this image could not be used, the next consecutive image was chosen. 
+
+**Gap Fraction:** Typically, five images of different exposure were taken at each LocationID. One image was chosen for each LocationID based on best exposure. Each best image was converted into a black/white bitmap file using ImageJ with the Hemispherical 2.0 plugin. Then, site openness was calculated using Gap Light Analyzer 2.0. Alternatively, ImageJ with the Hemispherical 2.0 plugin was used to calculate gap fraction for every exposure, and summary statistics (median, min, and max gap fraction)were then generated for each LocationID. 
+
+**SDD:** For pole positions (LocationIDs ending in pole), snow presence is determined by a nonzero snow depth value for a given pole, and snow disappearance dates are days where snow is not present, but was the previous day. For stake positions (LocationIDs ending in a number), snow presence is determined based on temperature thresholds. For snow to be present, the maximum daily temperature the daily temperature range must be below 1.5 °C for 48 consecutive hours. Snow disappearance dates are taken as days where snow is not present, but was the previous day.   
+
 
 
